@@ -1,0 +1,80 @@
+﻿package com.company;
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        list.add("four");
+        list.add("five");
+        list.add("five");
+
+        System.out.println(list);
+
+        ArrayList<String> listU = new ArrayList<>();
+        int sl = list.size();
+
+        for (int i = 0; i < sl; i++) {
+            if(!listU.contains(list.get(i))) {
+                listU.add(list.get(i));
+            }
+        }
+
+        System.out.println("Unique words :"+listU);
+
+        int slu = listU.size();
+
+        for (int i = 0; i < slu; i++) {
+            int wCnt = 0;
+            for (int j = 0; j < sl; j++) {
+                if(list.get(j)==listU.get(i)){
+                    wCnt = wCnt + 1;
+                }
+            }
+
+            System.out.println("Word '"+listU.get(i)+"' appears "+wCnt+" times");
+        }
+
+    }
+/*
+    public PhoneDict PD1 = new PhoneDict("Ivanovus", "+79091111111");
+    public PhoneDict PD2 = new PhoneDict("Ivanovus", "+79092222222");
+    private static final PhoneDict PD3 = new PhoneDict("Petrovus", "+79093333333");
+    private static final PhoneDict PD4 = new PhoneDict("Chuhchuhus", "+79094444444");
+    private static final PhoneDict PD5 = new PhoneDict("Chuhchuhus", "+79095555555");
+    private static final PhoneDict PD6 = new PhoneDict("Chuhchuhus", "+79096666666");
+
+    private static LinkedHashMap <String, String> PD = new LinkedHashMap<>();
+
+
+    public class PhoneDict {
+        String Name;
+        String PhoneN;
+
+
+        public PhoneDict(String Name, String PhoneN){
+            this.Name = Name;
+            this.PhoneN = PhoneN;
+        }
+
+        public void add() {
+
+            PD.put(Name, PhoneN);
+
+        }
+    }
+    */
+
+
+}
